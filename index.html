@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXC EXCELLENCE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho com o logo e menu hamburguer -->
+    <header class="header">
+        <img src="images/logo sem fundo.png" alt="Logo EXC Excellence" class="logo">
+
+        <!-- Texto de recuperação tributária -->
+        <span class="tax-recovery">RECUPERAÇÃO TRIBUTÁRIA</span>
+        
+        <!-- Ícone de menu hamburguer -->
+        <div class="menu-icon">
+            <img src="images/Menu.png" alt="Menu" id="menu-toggle">
+        </div>
+
+        <!-- Menu escondido -->
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#about">Sobre nós</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#contact-info">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <hr class="divider">
+
+    <!-- Seção Hero: Título principal e imagem de fundo -->  
+    <section class="hero">  
+        <div class="hero-content">  
+            <img src="images/transformamos.png" alt="Imagem Solução para o seu negócio" class="hero-image">  
+            <div class="button-container">  
+                <button id="hero-button" class="hero-button">  
+                    <img src="images/botao saiba mais.png" alt="Saiba mais" />  
+                </button>  
+            </div>    
+        </div>  
+    </section>  
+
+    <!-- Seção Sobre nós -->  
+    <section id="about">  
+        <div class="about-image">  
+            <img src="images/celular.png" alt="Imagem de celular representando soluções da Excellence" class="celular-image">  
+        </div>  
+    </section>  
+
+    <!-- Missão, Visão e Valores -->  
+    <section id="missao">  
+        <div class="missao-container">  
+            <img src="images/missaofundo.png" alt="Imagem de Fundo" class="missaofundo-image">  
+            <img src="images/missao.png" alt="Missão, Visão e Valores" class="missao-image">  
+        </div>  
+    </section>  
+
+    <!-- Imagem Como funciona -->  
+    <section id="how-it-works">  
+        <div class="how-it-works">  
+            <img src="images/como funciona.png" alt="Como funciona" class="como-funciona-image">  
+        </div>  
+    </section>  
+
+    <!-- Seção O que oferecemos -->  
+    <section id="services">  
+        <div class="services-image">  
+            <img src="images/solucoes tributarias.png" alt="Soluções Tributárias" class="solucoes-tributarias-image">  
+        </div>  
+    </section>  
+
+    <!-- Seção Contato -->  
+    <section id="contact-info">  
+        <div class="contact-info-image">  
+            <img src="images/midia social2.png" alt="Mídia Social" class="contact-image">  
+        </div>  
+        <div class="social-buttons">  
+            <a href="https://www.instagram.com/exc.consultoria" class="social-button">  
+                <img src="images/instagram.png" alt="Instagram" class="social-icon">  
+            </a>  
+            <a href="mailto:exc.exelencia@gmail.com" class="social-button">  
+                <img src="images/email.png" alt="Email" class="social-icon">  
+            </a>  
+            <a href="https://wa.me/5511947473592" class="social-button">  
+                <img src="images/whatsapp.png" alt="WhatsApp" class="social-icon">  
+            </a>  
+        </div>  
+        
+        <!-- Novo botão de orçamento -->  
+        <div class="budget-button"> 
+            <!-- orcamento.html para abrir a tela de orçamento --> 
+            <a href="mailto:exc.exelencia@gmail.com.html" class="budget-button-link">Solicitar Orçamento</a>  
+        </div>  
+    </section>  
+
+    <script>  
+        // Aguarda o carregamento do DOM  
+        document.addEventListener('DOMContentLoaded', function() {  
+            // Configura a rolagem suave para a seção especificada  
+            setupScrollToSection();  
+            setupMenuToggle();  
+            // setupBudgetFormSubmission(); // descomente se necessário  
+        });  
+
+        // Configura a rolagem suave para a seção "Como Funciona"  
+        function setupScrollToSection() {  
+            const heroButton = document.getElementById('hero-button');  
+            if (heroButton) {  
+                heroButton.addEventListener('click', function(event) {  
+                    event.preventDefault(); // Evita o comportamento padrão do botão  
+                    scrollToSection('how-it-works'); // Chama a função de rolagem suave  
+                });  
+            }  
+        }  
+
+        // Função para rolar suavemente até a seção  
+        function scrollToSection(sectionId) {  
+            const section = document.getElementById(sectionId);  
+            if (section) {  
+                section.scrollIntoView({ behavior: 'smooth' });  
+            } else {  
+                console.error(`Seção com ID ${sectionId} não encontrada.`);  
+            }  
+        }  
+
+        // Configura a abertura e fechamento do menu  
+        function setupMenuToggle() {  
+            const menuToggle = document.getElementById('menu-toggle');  
+            if (menuToggle) {  
+                menuToggle.addEventListener('click', function() {  
+                    const navMenu = document.getElementById('nav-menu');  
+                    navMenu.classList.toggle('hidden');  
+                });  
+            }  
+        }  
+
+                // Script para abrir e fechar o menu ao clicar na imagem
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            var menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        });
+
+        // A função para envio de formulário do orçamento pode ser adicionada aqui conforme necessário  
+    </script>   
+    
+</body>  
+</html>

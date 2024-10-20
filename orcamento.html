@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html lang="pt-br">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Orçamento</title>  
+    <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+    <div class="modal-content">  
+        <h2>Solicitar Orçamento</h2>  
+        <!-- Substitua {id} pelo ID correto do seu formulário -->  
+        <form id="budget-form" action="https://formspree.io/f/xvgoojgp" method="post">  
+            <label for="name">Nome:</label>  
+            <input type="text" id="name" name="name" required>  
+            
+            <label for="email">Email:</label>  
+            <input type="email" id="email" name="email" required>  
+            
+            <label for="phone">Telefone:</label>  
+            <input type="text" id="phone" name="phone" required>  
+            
+            <label for="description">Descrição do problema:</label>  
+            <textarea id="description" name="description" rows="10" required></textarea>  
+
+            <button type="submit" id="send-button" class="send-button">Enviar</button>  
+
+            <div class="back-button-container">  
+                <a href="javascript:history.back()" class="back-button">Voltar</a>  
+            </div>  
+        </form>  
+    </div>  
+
+    <script>  
+        document.getElementById('budget-form').addEventListener('submit', function(event) {  
+            event.preventDefault();  
+            const formData = new FormData(event.target);  
+            // Use a URL correta do Formspree  
+            fetch('https://formspree.io/f/{id}', {  
+                method: 'POST',  
+                body: formData,  
+                headers: {  
+                    'Accept': 'application/json'  
+                }  
+            })  
+            .then(response => {  
+                if (response.ok) {  
+                    return response.json();  
+                }  
+                throw new Error('Erro na solicitação');  
+            })  
+            .then(data => {  
+                console.log(data);  
+                alert('Orçamento solicitado com sucesso!');  
+                document.getElementById('budget-form').reset();  
+            })  
+            .catch(error => {  
+                console.error('Erro:', error);  
+                alert('Ocorreu um erro ao enviar seu orçamento. Por favor, tente novamente.');  
+            });  
+        });  
+    </script>  
+</body>  
+</html>

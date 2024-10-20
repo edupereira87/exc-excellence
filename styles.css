@@ -1,0 +1,353 @@
+/* Configurações globais */  
+body {  
+    background-image: url('images/imagem_site_editada.jpg'); /* Caminho da imagem */  
+    background-size: cover; /* Faz com que a imagem cubra a tela toda */  
+    background-repeat: no-repeat; /* Evita repetição da imagem */  
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */  
+    background-position: center; /* Centraliza a imagem */  
+    color: #fff; /* Texto branco para ter contraste com o fundo */  
+    font-family: 'Arial', sans-serif;  
+    margin: 0;  
+    padding: 0;  
+    scroll-behavior: smooth; /* Rolagem suave para links internos */  
+}  
+
+/* Estilo do cabeçalho */  
+.header {  
+    background-color: rgba(10, 10, 10, 0.8); /* Fundo semi-transparente */  
+    padding: 20px;  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+}  
+
+.logo {  
+    height: 80px;  
+}  
+
+/* Estilo para o ícone do menu */  
+.menu-icon {  
+    display: block;  
+    cursor: pointer;  
+}  
+
+.menu-icon img {  
+    width: 40px; /* Tamanho do ícone */  
+    height: auto;  
+}  
+
+/* Escondendo o menu por padrão */  
+#nav-menu {  
+    display: none;  
+    position: absolute;  
+    top: 70px;  
+    right: 20px;  
+    background-color: rgba(14, 13, 13, 0.9); /* Fundo semi-transparente */  
+    padding: 10px;  
+    border-radius: 8px;  
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}   
+
+#nav-menu ul {  
+    list-style: none;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+#nav-menu ul li {  
+    margin: 10px 0;  
+}  
+
+#nav-menu ul li a {  
+    color: #ffc107; /* Cor do link */  
+    text-decoration: none;  
+    font-size: 18px;  
+}  
+
+/* Exibir o menu ao clicar */  
+#nav-menu.active {  
+    display: block;  
+}  
+
+/* Estilo da seção Hero */  
+.hero {  
+    background-size: cover;  
+    background-position: center;  
+    padding: 100px 20px;  
+    text-align: center;  
+    color: #fff;  
+}  
+
+.hero-content {  
+    display: flex;  
+    flex-direction: column; /* Alinha itens em coluna */  
+    align-items: flex-start; /* Alinha à esquerda */  
+    justify-content: center;  
+    margin-left: 20px; /* Margem para melhor alinhamento */  
+}  
+
+.hero-image {  
+    max-width: 50%; /* Reduz a largura da imagem para 50% */  
+    height: auto;  
+    margin-bottom: -30px; /* Espaço entre a imagem e o botão */  
+}  
+
+.button-container {  
+    display: flex; /* Usando flex para alinhar o botão */  
+    align-items: center; /* Centraliza o botão verticalmente em relação à imagem */  
+    margin-left: 170px; /* Espaço entre a imagem e o botão */  
+}  
+
+/* Estilos do link que simula o botão */  
+.hero-button {  
+    background-color: #161614; /* Cor de fundo */  
+    color: white; /* Cor do texto */  
+    padding: 15px 30px; /* Espacamento interno do botão */  
+    border: none; /* Remove bordas padrão */  
+    border-radius: 5px; /* Bordas arredondadas */  
+    text-decoration: none; /* Remove underline se for um link */  
+    font-size: 18px; /* Tamanho da fonte */  
+    cursor: pointer; /* Cursor de clique */  
+    transition: background-color 0.3s; /* Efeito de transição */  
+}  
+
+.hero-button:hover {  
+    background-color: #218838; /* Mudança de cor no hover */  
+} 
+
+.hero-button-image {  
+    width: 100%; /* A imagem do botão preenche completamente o link */  
+    height: 100%;  
+    object-fit: cover; /* Ajusta a imagem para cobrir toda a área do link */  
+    transition: transform 0.3s ease; /* Transição suave ao passar o mouse */  
+}  
+
+.hero-button-link:hover .hero-button-image {  
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */  
+    cursor: pointer; /* Mostra o cursor de clique */  
+}  
+
+/* Linha divisória branca entre o cabeçalho e a seção hero */  
+.divider {  
+    border: none; /* Remove qualquer borda padrão */  
+    border-top: 2px solid #fff; /* Linha branca com 2px de espessura */  
+    margin: -20px 0 0 0; /* Move a linha 20px para cima */  
+    width: 100%; /* Ocupa toda a largura da página */  
+    position: relative; /* Permite ajuste da posição */ 
+    z-index: 1; /* Garante que a linha fique abaixo do menu */ 
+}  
+
+/* Estilos das seções restantes */  
+#about {  
+    padding: 10px 20px;  
+    text-align: center; /* Centraliza o conteúdo */  
+    margin-top: -200px;  
+}  
+
+.about-image {  
+    display: flex;  
+    justify-content: center;  
+}  
+
+.celular-image {  
+    max-width: 100%; /* Faz com que a imagem não ultrapasse a largura do container */  
+    height: auto; /* Mantém a proporção da imagem */  
+}  
+
+#missao {
+    position: relative; /* Para permitir o uso de posicionamento absoluto */
+    text-align: center;
+}
+
+.missao-container {
+    position: relative; /* O contêiner das imagens */
+    display: inline-block; /* Para que as imagens se comportem bem juntas */
+}
+
+.missaofundo-image {
+    position: absolute;
+    top: 0px; /* Ajuste conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; /* Certifica-se de que está atrás da imagem 'missao' */
+    opacity: 0.6; /* Ajuste a opacidade se quiser que a imagem de fundo seja mais sutil */
+    height: 600px; /* Defina a altura desejada */
+    width: 1318px; /* Garante que a largura ajuste proporcionalmente */
+    margin-top: -250px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */
+}
+
+.missao-image {
+    position: relative;
+    z-index: 2; /* Fica à frente da imagem de fundo */
+    max-width: 100%;
+    height: auto;
+    margin-top: -280px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */
+}
+
+/* Estilo para a seção Como Funciona */  
+#how-it-works {  
+    padding: 10px 20px;  
+    text-align: center;  
+    margin-top: 200px;  
+}  
+
+.how-it-works-image {  
+    display: flex;  
+    justify-content: center;  
+}  
+
+.como-funciona-image {  
+    width: 80%; /* Altere para a largura desejada */  
+    max-width: 800px; /* Define uma largura máxima */  
+    height: auto; /* Mantém a proporção da imagem */  
+}  
+
+/* Estilo para o que oferecemos */  
+#services {  
+    padding: 10px 20px;  
+    text-align: center;  
+    margin-top: 50px;  
+}  
+
+.services-image {  
+    display: flex;  
+    justify-content: center;  
+}  
+
+.solucoes-tributarias-image {  
+    width: 80%; /* Altere para a largura desejada */  
+    max-width: 100%; /* Define uma largura máxima */  
+    height: auto; /* Mantém a proporção da imagem */  
+}  
+
+.value-box, .step, .service-box {  
+    width: 30%;  
+    display: inline-block; /* Para alinhamento em linha */  
+}  
+
+/* Estilo de contato */  
+#contact-info {  
+    text-align: center;  
+    background-color: #000; /* Cor de fundo */  
+    color: #fff; /* Cor do texto */  
+    padding: 20px;  
+}  
+
+.social-buttons {  
+    display: flex; /* Use flexbox para alinhar verticalmente */  
+    flex-direction: column; /* Exibe os itens em coluna */  
+    align-items: center; /* Centraliza os botões horizontalmente */  
+    margin: -190px 0;  
+}  
+
+.social-button {  
+    margin: -2px; /* Espaço entre os botões */  
+}  
+
+.social-icon {  
+    width: 50px; /* Ajuste o tamanho da imagem conforme necessário */  
+    height: auto; /* Manter proporção da imagem */  
+    transition: transform 0.3s; /* Efeito de transição ao passar o mouse */  
+}  
+
+.social-button:hover .social-icon {  
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */  
+}  
+
+.contact-image {  
+    max-width: 100%; /* Faz com que a imagem não ultrapasse a largura do container */  
+    height: auto; /* Mantém a proporção da imagem */  
+}  
+
+/* Estilos para o botão de orçamento */  
+.budget-button {  
+    margin: 230px 0; /* Espaço acima e abaixo do botão */  
+    display: flex; /* Usar flexbox para centralizar se necessário */  
+    justify-content: center; /* Centraliza o botão na linha */  
+}  
+
+.budget-button-link {  
+    background-color: #28a745; /* Cor de fundo do botão */  
+    color: white; /* Cor do texto */  
+    padding: 15px 30px; /* Espaçamento interno */  
+    border-radius: 5px; /* Bordas arredondadas */  
+    text-decoration: none; /* Remove underline do link */  
+    font-size: 18px; /* Tamanho da fonte */  
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */  
+}  
+
+.budget-button-link:hover {  
+    background-color: #218838; /* Cor do botão ao passar o mouse */  
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */  
+}   
+
+.orcamento-icon {  
+    width: 500px; /* Ajuste o tamanho do botão conforme necessário */  
+    height: auto; /* Mantém a proporção da imagem */  
+}
+
+.back-button-container {  
+    text-align: center; /* Centraliza o botão */  
+    margin: 20px 0; /* Margem acima e abaixo do botão */  
+}  
+
+.back-button {  
+    display: inline-block; /* Faz o link ocupar área de bloco */  
+    padding: 10px 20px; /* Espaçamento interno */  
+    background-color: #ffc107; /* Cor de fundo do botão */  
+    color: #000; /* Cor do texto */  
+    text-decoration: none; /* Remove o sublinhado */  
+    border-radius: 5px; /* Bordas arredondadas */  
+    font-size: 18px; /* Tamanho da fonte */  
+    transition: background-color 0.3s; /* Transição suave para a mudança de cor */  
+}  
+
+.back-button:hover {  
+    background-color: #e0a800; /* Cor do botão ao passar o mouse */  
+}
+
+.modal-content {  
+    max-width: 600px; /* Largura máxima do contêiner do formulário */  
+    margin: 20px auto; /* Centraliza o contêiner no meio da página */  
+    padding: 20px; /* Adiciona espaço interno */  
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente para destaque */  
+    border-radius: 8px; /* Bordas arredondadas */  
+}  
+
+label {  
+    display: block; /* Faz com que o label ocupe toda a linha */  
+    margin-bottom: 5px; /* Espaço abaixo do label */  
+    color: #fff; /* Cor do texto dos labels */  
+}  
+
+input[type="text"], input[type="email"], textarea {  
+    width: 100%; /* Faz os campos ocupar 100% do contêiner */  
+    padding: 10px; /* Espaçamento interno */  
+    border: 1px solid #ccc; /* Borda dos campos */  
+    border-radius: 4px; /* Bordas arredondadas */  
+    box-sizing: border-box; /* Inclui padding e bordas na largura total */  
+}  
+
+textarea {  
+    resize: vertical; /* Permite redimensionamento vertical do textarea */  
+}  
+
+.tax-recovery {
+    font-weight: bold;
+    color: #FFD700; /* Cor mostarda */
+    font-size: 40px; /* Aumenta o tamanho do texto */
+    margin-left: 20px;
+    margin-right: 20px;
+    animation: blink 1s infinite; /* Efeito de piscar */
+}
+
+/* Animação de piscar */
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
