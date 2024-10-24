@@ -12,6 +12,10 @@ body {
     scroll-behavior: smooth; /* Rolagem suave para links internos */  
 }  
 
+* {  
+    box-sizing: inherit; /* Aplica box-sizing a todos os elementos */  
+}  
+
 /* Estilo do cabeçalho */  
 .header {  
     background-color: rgba(10, 10, 10, 0.8); /* Fundo semi-transparente */  
@@ -96,6 +100,7 @@ body {
     display: flex; /* Usando flex para alinhar o botão */  
     align-items: center; /* Centraliza o botão verticalmente em relação à imagem */  
     margin-left: 170px; /* Espaço entre a imagem e o botão */  
+    justify-content: center; /* Centraliza o botão na linha */ 
 }  
 
 /* Estilos do link que simula o botão */  
@@ -259,12 +264,17 @@ body {
     height: auto; /* Mantém a proporção da imagem */  
 }  
 
-/* Estilos para o botão de orçamento */  
-.budget-button {  
-    margin: 230px 0; /* Espaço acima e abaixo do botão */  
-    display: flex; /* Usar flexbox para centralizar se necessário */  
-    justify-content: center; /* Centraliza o botão na linha */  
-}  
+/* Estilização do botão de orçamento */  
+.budget-button-link {  
+    background-color: #28a745; /* Cor de fundo do botão */  
+    color: white; /* Cor do texto */  
+    padding: 15px 30px; /* Espaçamento interno */  
+    border-radius: 5px; /* Bordas arredondadas */  
+    text-decoration: none; /* Remove underline do link */  
+    font-size: 18px; /* Tamanho da fonte */  
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */  
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */  
+}   
 
 .budget-button-link {  
     background-color: #28a745; /* Cor de fundo do botão */  
@@ -277,13 +287,14 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */  
 }  
 
+/* Efeito hover para o botão de orçamento */ 
 .budget-button-link:hover {  
     background-color: #218838; /* Cor do botão ao passar o mouse */  
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */  
 }   
 
 .orcamento-icon {  
-    width: 500px; /* Ajuste o tamanho do botão conforme necessário */  
+    width: 100%; /* Ajuste o tamanho do botão conforme necessário */  
     height: auto; /* Mantém a proporção da imagem */  
 }  
 
@@ -292,6 +303,7 @@ body {
     margin: 20px 0; /* Margem acima e abaixo do botão */  
 }  
 
+/* Estilizando o botão voltar */  
 .back-button {  
     display: inline-block; /* Faz o link ocupar área de bloco */  
     padding: 10px 20px; /* Espaçamento interno */  
@@ -301,20 +313,23 @@ body {
     border-radius: 5px; /* Bordas arredondadas */  
     font-size: 18px; /* Tamanho da fonte */  
     transition: background-color 0.3s; /* Transição suave para a mudança de cor */  
-}  
+} 
 
+/* Efeito hover para o botão voltar */ 
 .back-button:hover {  
     background-color: #e0a800; /* Cor do botão ao passar o mouse */  
 }  
 
+/* Estilo do conteúdo do modal */  
 .modal-content {  
-    max-width: 600px; /* Largura máxima do contêiner do formulário */  
+    max-width: 90%; /* Largura máxima do contêiner do formulário ajustada para 90% */  
     margin: 20px auto; /* Centraliza o contêiner no meio da página */  
     padding: 20px; /* Adiciona espaço interno */  
     background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente para destaque */  
     border-radius: 8px; /* Bordas arredondadas */  
 }  
 
+/* Estilo dos labels */ 
 label {  
     display: block; /* Faz com que o label ocupe toda a linha */  
     margin-bottom: 5px; /* Espaço abaixo do label */  
@@ -333,12 +348,12 @@ textarea {
     resize: vertical; /* Permite redimensionamento vertical do textarea */  
 }  
 
+/* Estilo para o texto de recuperação de impostos */
 .tax-recovery {  
     font-weight: bold;  
     color: #FFD700; /* Cor mostarda */  
-    font-size: 40px; /* Aumenta o tamanho do texto */  
-    margin-left: 20px;  
-    margin-right: 20px;  
+    font-size: 2.5rem; /* Aumenta o tamanho do texto para responsividade */  
+    margin: 20px; /* Ajuste de margem */  
     animation: blink 1s infinite; /* Efeito de piscar */  
 }  
 
@@ -374,12 +389,18 @@ textarea {
     .hero-content {  
         margin-left: 0; /* Remove a margem em telas menores */  
         align-items: center; /* Centraliza o conteúdo */  
+    } 
+    
+     /* Ajusta a imagem da seção hero */  
+     .hero-image {  
+        max-width: 100%; /* Ajusta a imagem para 100% em telas menores */  
+        height: auto; /* Mantém a proporção */  
     }  
 
     .button-container {  
-        margin-left: 0; /* Remove a margem em telas menores */  
-        justify-content: center; /* Centraliza o botão */  
-    }  
+        flex-direction: column; /* Alinha botões verticalmente em telas menores */  
+        margin: 0; /* Remove a margem */  
+    } 
 
     .value-box, .step, .service-box {  
         width: 100%; /* Faz os boxes ocuparem 100% em telas menores */  
@@ -411,5 +432,19 @@ textarea {
     .budget-button-link {  
         padding: 10px 20px; /* Ajusta o padding do botão */  
         font-size: 16px; /* Reduz o tamanho da fonte */  
+    }
+    
+    /* Ajustes de espaçamento e tamanho */  
+    .tax-recovery {  
+        font-size: 20px; /* Reduz o tamanho do texto de recuperação de impostos */  
+        margin: 10px; /* Ajusta a margem em telas menores */  
+    }  
+
+    /* Para botões e inputs */  
+    .budget-button-link, .back-button {  
+        padding: 10px 15px; /* Reduz o padding do botão em telas menores */  
+        font-size: 16px; /* Reduz o tamanho da fonte dos botões */  
+        width: 100%; /* Faz os botões ocuparem 100% da largura */  
+        box-sizing: border-box; /* Mantém padding e borda na largura total */  
     }  
 }
