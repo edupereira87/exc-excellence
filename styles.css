@@ -1,15 +1,8 @@
 /* Configurações globais */  
 body {  
-    background-image: url('images/imagem_site_editada.jpg'); /* Caminho da imagem */  
-    background-size: cover; /* Faz com que a imagem cubra a tela toda */  
-    background-repeat: no-repeat; /* Evita repetição da imagem */  
-    background-attachment: fixed; /* Mantém a imagem fixa ao rolar a página */  
-    background-position: center; /* Centraliza a imagem */  
-    color: #fff; /* Texto branco para ter contraste com o fundo */  
-    font-family: 'Arial', sans-serif;  
     margin: 0;  
     padding: 0;  
-    scroll-behavior: smooth; /* Rolagem suave para links internos */  
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total do tamanho */  
 }  
 
 * {  
@@ -96,11 +89,10 @@ body {
     margin-bottom: -30px; /* Espaço entre a imagem e o botão */  
 }  
 
+/* Centro do conteúdo do botão */  
 .button-container {  
-    display: flex; /* Usando flex para alinhar o botão */  
-    align-items: center; /* Centraliza o botão verticalmente em relação à imagem */  
-    margin-left: 170px; /* Espaço entre a imagem e o botão */  
-    justify-content: center; /* Centraliza o botão na linha */ 
+    display: flex;  
+    justify-content: center; /* Centraliza o botão na linha */  
 }  
 
 /* Estilos do link que simula o botão */  
@@ -132,6 +124,23 @@ body {
     cursor: pointer; /* Mostra o cursor de clique */  
 }  
 
+/* Estilização do botão "Saiba mais" */  
+.saiba-mais-button {  
+    background-color: #007bff; /* Cor de fundo do botão */  
+    color: white; /* Cor do texto */  
+    padding: 10px 20px; /* Ajuste do tamanho do botão */  
+    border-radius: 5px; /* Bordas arredondadas */  
+    text-decoration: none; /* Remove underline do link */  
+    font-size: 16px; /* Tamanho da fonte menor */  
+    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */  
+} 
+
+/* Efeito hover para o botão "Saiba mais" */  
+.saiba-mais-button:hover {  
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */  
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */  
+}  
+
 /* Linha divisória branca entre o cabeçalho e a seção hero */  
 .divider {  
     border: none; /* Remove qualquer borda padrão */  
@@ -142,52 +151,46 @@ body {
     z-index: 1; /* Garante que a linha fique abaixo do menu */   
 }  
 
-/* Estilos das seções restantes */  
+/* Seção Sobre nós */  
 #about {  
-    padding: 10px 20px;  
-    text-align: center; /* Centraliza o conteúdo */  
-    margin-top: -200px;  
+    display: flex;  
+    justify-content: center; /* Centraliza a imagem */  
+    margin-top: 40px; /* Espaço acima da seção */  
 }  
 
 .about-image {  
-    display: flex;  
-    justify-content: center;  
-}  
+    max-width: 100%; /* Limita a largura da imagem */  
+    height: auto; /* Mantém a proporção */  
+}    
 
 .celular-image {  
     max-width: 100%; /* Faz com que a imagem não ultrapasse a largura do container */  
     height: auto; /* Mantém a proporção da imagem */  
 }  
 
+/* Missão, Visão e Valores */  
 #missao {  
-    position: relative; /* Para permitir o uso de posicionamento absoluto */  
-    text-align: center;  
+    position: relative; /* Para posicionar imagens sobrepostas se necessário */  
+    margin-top: 40px; /* Espaço acima da seção */  
 }  
 
 .missao-container {  
-    position: relative; /* O contêiner das imagens */  
-    display: inline-block; /* Para que as imagens se comportem bem juntas */  
+    display: flex;  
+    justify-content: center; /* Centraliza o conteúdo */  
+    flex-direction: column; /* Alinha as imagens verticalmente */  
 }  
 
 .missaofundo-image {  
-    position: absolute;  
-    top: 0px; /* Ajuste conforme necessário */  
-    left: 50%;  
-    transform: translateX(-50%);  
-    z-index: 1; /* Certifica-se de que está atrás da imagem 'missao' */  
-    opacity: 0.6; /* Ajuste a opacidade se quiser que a imagem de fundo seja mais sutil */  
-    height: 600px; /* Defina a altura desejada */  
-    width: 1318px; /* Garante que a largura ajuste proporcionalmente */  
-    margin-top: -250px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */  
+    max-width: 100%; /* Limita a largura da imagem de fundo */  
+    height: auto; /* Mantém a proporção */  
 }  
 
 .missao-image {  
-    position: relative;  
-    z-index: 2; /* Fica à frente da imagem de fundo */  
-    max-width: 100%;  
-    height: auto;  
-    margin-top: -280px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */  
-}  
+    position: absolute; /* Para sobrepor a imagem de missão se necessário */  
+    top: 10%; /* Ajuste de posição */  
+    left: 50%; /* Centralizar horizontalmente */  
+    transform: translateX(-50%); /* Para centralizar corretamente */  
+}   
 
 /* Estilo para a seção Como Funciona */  
 #how-it-works {  
@@ -264,39 +267,38 @@ body {
     height: auto; /* Mantém a proporção da imagem */  
 }  
 
-/* Estilização do botão de orçamento */  
+/* Estilização do botão "Novo botão de orçamento" */  
 .budget-button-link {  
-    background-color: #28a745; /* Cor de fundo do botão */  
+    background-color: #28a745; /* Cor de fundo verde */  
     color: white; /* Cor do texto */  
     padding: 15px 30px; /* Espaçamento interno */  
     border-radius: 5px; /* Bordas arredondadas */  
     text-decoration: none; /* Remove underline do link */  
-    font-size: 18px; /* Tamanho da fonte */  
-    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */  
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */  
-}   
-
-.budget-button-link {  
-    background-color: #28a745; /* Cor de fundo do botão */  
-    color: white; /* Cor do texto */  
-    padding: 15px 30px; /* Espaçamento interno */  
-    border-radius: 5px; /* Bordas arredondadas */  
-    text-decoration: none; /* Remove underline do link */  
-    font-size: 18px; /* Tamanho da fonte */  
-    transition: background-color 0.3s, transform 0.2s; /* Efeitos de transição */  
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */  
+    font-size: 20px; /* Tamanho da fonte do botão */  
+    transition: background-color 0.3s, transform 0.2s; /* Animações */  
+    margin: 50px auto; /* Espaçamento acima e abaixo e centralizado */  
+    display: block; /* Faz o botão ocupar toda a largura necessária */  
+    width: calc(100% - 40px); /* Largura ajustada com padding */  
 }  
 
-/* Efeito hover para o botão de orçamento */ 
+/* Efeito hover para o botão de orçamento */  
 .budget-button-link:hover {  
-    background-color: #218838; /* Cor do botão ao passar o mouse */  
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */  
+    background-color: #218838; /* Muda cor ao passar o mouse */  
+    transform: translateY(-2px); /* Efeito de elevação */  
 }   
 
+/* Estilo do ícone do orçamento */
 .orcamento-icon {  
     width: 100%; /* Ajuste o tamanho do botão conforme necessário */  
     height: auto; /* Mantém a proporção da imagem */  
 }  
+
+/* Estilo dos ícones de contato */  
+.contato-icon {  
+    width: 40px; /* Define um tamanho fixo para os ícones de contato */  
+    height: auto; /* Mantém a proporção */  
+    margin: 10px; /* Margem ao redor dos ícones */  
+} 
 
 .back-button-container {  
     text-align: center; /* Centraliza o botão */  
@@ -406,6 +408,7 @@ textarea {
         width: 100%; /* Faz os boxes ocuparem 100% em telas menores */  
         margin-bottom: 20px; /* Adiciona espaço entre os boxes */  
     }  
+    
 
     .budget-button {  
         margin: 50px 0; /* Ajusta a margem do botão de orçamento */  
@@ -415,8 +418,9 @@ textarea {
         width: 100%; /* Ajusta a largura do ícone para 100% */  
     }  
 
+    .about-image,  
     .missao-container {  
-        display: block; /* Alinha as imagens em coluna */  
+        flex-direction: column; /* Alinha verticalmente em telas menores */  
     }  
 
     .missaofundo-image {  
@@ -425,13 +429,14 @@ textarea {
     }  
 
     .missao-image {  
-        margin-top: -50px; /* Ajusta a margem para melhor alinhamento */  
+        position: static; /* Remove o posicionamento absoluto em dispositivos menores */  
+        margin-top: 20px; /* Adiciona um espaço entre as imagens */  
     }  
 
     /* Ajustes para o botão de orçamento */  
     .budget-button-link {  
-        padding: 10px 20px; /* Ajusta o padding do botão */  
-        font-size: 16px; /* Reduz o tamanho da fonte */  
+        padding: 10px 15px; /* Reduz o padding do botão */  
+        font-size: 16px; /* Ajusta o tamanho da fonte */  
     }
     
     /* Ajustes de espaçamento e tamanho */  
