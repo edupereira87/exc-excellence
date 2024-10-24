@@ -45,7 +45,7 @@ body {
     background-color: rgba(14, 13, 13, 0.9); /* Fundo semi-transparente */  
     padding: 10px;  
     border-radius: 8px;  
-    z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+    z-index: 1000; /* Garante que o menu fique acima de outros elementos */  
 }   
 
 #nav-menu ul {  
@@ -113,7 +113,7 @@ body {
 
 .hero-button:hover {  
     background-color: #218838; /* Mudança de cor no hover */  
-} 
+}   
 
 .hero-button-image {  
     width: 100%; /* A imagem do botão preenche completamente o link */  
@@ -133,8 +133,8 @@ body {
     border-top: 2px solid #fff; /* Linha branca com 2px de espessura */  
     margin: -20px 0 0 0; /* Move a linha 20px para cima */  
     width: 100%; /* Ocupa toda a largura da página */  
-    position: relative; /* Permite ajuste da posição */ 
-    z-index: 1; /* Garante que a linha fique abaixo do menu */ 
+    position: relative; /* Permite ajuste da posição */   
+    z-index: 1; /* Garante que a linha fique abaixo do menu */   
 }  
 
 /* Estilos das seções restantes */  
@@ -154,35 +154,35 @@ body {
     height: auto; /* Mantém a proporção da imagem */  
 }  
 
-#missao {
-    position: relative; /* Para permitir o uso de posicionamento absoluto */
-    text-align: center;
-}
+#missao {  
+    position: relative; /* Para permitir o uso de posicionamento absoluto */  
+    text-align: center;  
+}  
 
-.missao-container {
-    position: relative; /* O contêiner das imagens */
-    display: inline-block; /* Para que as imagens se comportem bem juntas */
-}
+.missao-container {  
+    position: relative; /* O contêiner das imagens */  
+    display: inline-block; /* Para que as imagens se comportem bem juntas */  
+}  
 
-.missaofundo-image {
-    position: absolute;
-    top: 0px; /* Ajuste conforme necessário */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1; /* Certifica-se de que está atrás da imagem 'missao' */
-    opacity: 0.6; /* Ajuste a opacidade se quiser que a imagem de fundo seja mais sutil */
-    height: 600px; /* Defina a altura desejada */
-    width: 1318px; /* Garante que a largura ajuste proporcionalmente */
-    margin-top: -250px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */
-}
+.missaofundo-image {  
+    position: absolute;  
+    top: 0px; /* Ajuste conforme necessário */  
+    left: 50%;  
+    transform: translateX(-50%);  
+    z-index: 1; /* Certifica-se de que está atrás da imagem 'missao' */  
+    opacity: 0.6; /* Ajuste a opacidade se quiser que a imagem de fundo seja mais sutil */  
+    height: 600px; /* Defina a altura desejada */  
+    width: 1318px; /* Garante que a largura ajuste proporcionalmente */  
+    margin-top: -250px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */  
+}  
 
-.missao-image {
-    position: relative;
-    z-index: 2; /* Fica à frente da imagem de fundo */
-    max-width: 100%;
-    height: auto;
-    margin-top: -280px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */
-}
+.missao-image {  
+    position: relative;  
+    z-index: 2; /* Fica à frente da imagem de fundo */  
+    max-width: 100%;  
+    height: auto;  
+    margin-top: -280px; /* Aproxima a imagem "missao" da parte superior da imagem "missaofundo" */  
+}  
 
 /* Estilo para a seção Como Funciona */  
 #how-it-works {  
@@ -285,7 +285,7 @@ body {
 .orcamento-icon {  
     width: 500px; /* Ajuste o tamanho do botão conforme necessário */  
     height: auto; /* Mantém a proporção da imagem */  
-}
+}  
 
 .back-button-container {  
     text-align: center; /* Centraliza o botão */  
@@ -305,7 +305,7 @@ body {
 
 .back-button:hover {  
     background-color: #e0a800; /* Cor do botão ao passar o mouse */  
-}
+}  
 
 .modal-content {  
     max-width: 600px; /* Largura máxima do contêiner do formulário */  
@@ -333,21 +333,59 @@ textarea {
     resize: vertical; /* Permite redimensionamento vertical do textarea */  
 }  
 
-.tax-recovery {
-    font-weight: bold;
-    color: #FFD700; /* Cor mostarda */
-    font-size: 40px; /* Aumenta o tamanho do texto */
-    margin-left: 20px;
-    margin-right: 20px;
-    animation: blink 1s infinite; /* Efeito de piscar */
-}
+.tax-recovery {  
+    font-weight: bold;  
+    color: #FFD700; /* Cor mostarda */  
+    font-size: 40px; /* Aumenta o tamanho do texto */  
+    margin-left: 20px;  
+    margin-right: 20px;  
+    animation: blink 1s infinite; /* Efeito de piscar */  
+}  
 
-/* Animação de piscar */
-@keyframes blink {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
+/* Animação de piscar */  
+@keyframes blink {  
+    0%, 100% {  
+        opacity: 1;  
+    }  
+    50% {  
+        opacity: 0;  
+    }  
+}  
+
+/* Media Queries para responsividade */  
+@media (max-width: 768px) {  
+    .hero-image {  
+        max-width: 100%; /* Ajusta a imagem da seção hero para 100% em telas menores */  
+    }  
+
+    .button-container {  
+        margin-left: 0; /* Remove a margem em telas menores */  
+        justify-content: center; /* Centraliza o botão */  
+    }  
+
+    .value-box, .step, .service-box {  
+        width: 100%; /* Faz os boxes ocuparem 100% em telas menores */  
+        margin-bottom: 20px; /* Adiciona espaço entre os boxes */  
+    }  
+
+    .budget-button {  
+        margin: 100px 0; /* Ajusta a margem do botão de orçamento */  
+    }  
+
+    .orcamento-icon {  
+        width: 100%; /* Ajusta a largura do ícone para 100% */  
+    }  
+
+    .missao-container {  
+        display: block; /* Alinha as imagens em coluna */  
+    }  
+
+    .missaofundo-image {  
+        width: 100%; /* Ajusta a largura da imagem de fundo */  
+        height: auto; /* Mantém a proporção */  
+    }  
+
+    .missao-image {  
+        margin-top: -100px; /* Ajusta a margem para melhor alinhamento */  
+    }  
 }
