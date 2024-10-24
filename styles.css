@@ -354,8 +354,26 @@ textarea {
 
 /* Media Queries para responsividade */  
 @media (max-width: 768px) {  
-    .hero-image {  
-        max-width: 100%; /* Ajusta a imagem da seção hero para 100% em telas menores */  
+    .header {  
+        flex-direction: column; /* Alinha itens em coluna em telas menores */  
+        align-items: flex-start; /* Alinha à esquerda */  
+    }  
+
+    .logo {  
+        height: 60px; /* Ajusta a altura do logo */  
+    }  
+
+    .menu-icon img {  
+        width: 30px; /* Reduz o tamanho do ícone do menu */  
+    }  
+
+    .hero {  
+        padding: 50px 10px; /* Ajusta o padding da seção hero */  
+    }  
+
+    .hero-content {  
+        margin-left: 0; /* Remove a margem em telas menores */  
+        align-items: center; /* Centraliza o conteúdo */  
     }  
 
     .button-container {  
@@ -369,7 +387,7 @@ textarea {
     }  
 
     .budget-button {  
-        margin: 100px 0; /* Ajusta a margem do botão de orçamento */  
+        margin: 50px 0; /* Ajusta a margem do botão de orçamento */  
     }  
 
     .orcamento-icon {  
@@ -386,6 +404,12 @@ textarea {
     }  
 
     .missao-image {  
-        margin-top: -100px; /* Ajusta a margem para melhor alinhamento */  
+        margin-top: -50px; /* Ajusta a margem para melhor alinhamento */  
+    }  
+
+    /* Ajustes para o botão de orçamento */  
+    .budget-button-link {  
+        padding: 10px 20px; /* Ajusta o padding do botão */  
+        font-size: 16px; /* Reduz o tamanho da fonte */  
     }  
 }
