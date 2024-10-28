@@ -26,7 +26,7 @@
         </div>
 
         <!-- Menu escondido -->
-        <nav id="nav-menu">
+        <nav id="nav-menu" class="hidden">
             <ul>
                 <li><a href="#about">Sobre nós</a></li>
                 <li><a href="#services">Serviços</a></li>
@@ -97,18 +97,15 @@
         
         <!-- Novo botão de orçamento -->  
         <div class="budget-button"> 
-            <!-- orcamento.html para abrir a tela de orçamento --> 
-            <a href="mailto:exc.exelencia@gmail.com.html" class="budget-button-link">Solicitar Orçamento</a>  
+            <a href="mailto:exc.exelencia@gmail.com" class="budget-button-link">Solicitar Orçamento</a>  
         </div>  
     </section>  
 
     <script>  
         // Aguarda o carregamento do DOM  
         document.addEventListener('DOMContentLoaded', function() {  
-            // Configura a rolagem suave para a seção especificada  
             setupScrollToSection();  
             setupMenuToggle();  
-            // setupBudgetFormSubmission(); // descomente se necessário  
         });  
 
         // Configura a rolagem suave para a seção "Como Funciona"  
@@ -116,8 +113,8 @@
             const heroButton = document.getElementById('hero-button');  
             if (heroButton) {  
                 heroButton.addEventListener('click', function(event) {  
-                    event.preventDefault(); // Evita o comportamento padrão do botão  
-                    scrollToSection('how-it-works'); // Chama a função de rolagem suave  
+                    event.preventDefault();  
+                    scrollToSection('how-it-works');  
                 });  
             }  
         }  
@@ -135,21 +132,13 @@
         // Configura a abertura e fechamento do menu  
         function setupMenuToggle() {  
             const menuToggle = document.getElementById('menu-toggle');  
-            if (menuToggle) {  
+            const navMenu = document.getElementById('nav-menu');  
+            if (menuToggle && navMenu) {  
                 menuToggle.addEventListener('click', function() {  
-                    const navMenu = document.getElementById('nav-menu');  
-                    navMenu.classList.toggle('hidden');  
+                    navMenu.classList.toggle('active');  
                 });  
             }  
         }  
-
-                // Script para abrir e fechar o menu ao clicar na imagem
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            var menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
-        });
-
-        // A função para envio de formulário do orçamento pode ser adicionada aqui conforme necessário  
     </script>   
     
 </body>  
